@@ -1,0 +1,87 @@
+:toc:
+:toclevels: 5
+:toc-placement!:
+:source-highlighter: highlight.js
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:github-repository: https://github.com/WSE-research/RDFLib-triplestore
+endif::[]
+
+= RDFLib Triplestore
+
+Based on https://github.com/vemonet/rdflib-endpoint/
+
+---
+
+toc::[]
+
+---
+
+== Store your RDF data 
+
+All RDF data in subfolders of {github-repository}/data/ will be loaded into the triplestore automatically when the service is started.
+See {github-repository}/data/README.adoc[README] for more information.
+
+== Build and Run
+
+=== Python
+
+==== Install Dependencies
+
+[source,shell,subs="attributes"]
+----
+git clone {github-repository}.git
+pip install -r requirements.txt
+----
+
+==== Run
+
+[source,shell]
+----
+export PORT=10000
+python app.py 
+----
+
+While using the configuration as shown above, information about the datasets and their health status should be available at http://127.0.0.1:10000/health/.
+
+
+=== Docker
+
+==== Build Docker Image
+
+[source,shell]
+----
+docker build -t rdflib-triplestore:latest .
+----
+
+==== Push Docker Image from Docker Hub
+
+[source,shell]
+----
+docker pull wseresearch/rdflib-triplestore:latest
+----
+
+==== Run Docker Image
+
+[source,shell]
+----
+docker run -p 30000:20000 -it --env EXTERNAL_PORT=30000 --env EXTERNAL_SERVER=http://127.0.0.1 --env INTERNAL_PORT=20000 rdflib-triplestore:latest
+----
+
+While using the configuration as shown above, information about the datasets and their health status should be available for external access at http://127.0.0.1:30000/health/.
+Inside the Docker container, the service is available at http://127.0.0.1:20000.
+
+
+== Contribute
+
+We are happy to receive your contributions. 
+Please create a pull request or an {github-repository}/issues/new[issue].
+As this tool is published under the {github-repository}/blob/main/LICENSE[MIT license], feel free to {github-repository}/fork[fork] it and use it in your own projects.
+
+== Disclaimer
+
+This tool is provided "as is" and without any warranty, express or implied.

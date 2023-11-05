@@ -1,0 +1,34 @@
+:toc:
+:toclevels: 5
+:toc-placement!:
+:source-highlighter: highlight.js
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+= Data 
+
+Create a new folder for your data here.
+
+== How to store your data
+
+In this folder, create new RDF Turtle files (file ending: `.ttl``). 
+These files will be imported into the triple store and can be queried using SPARQL.
+
+== Meta data for your data
+
+If you want to provide additional meta data, then create a file called `dataset.json` in this folder.
+This file should contain a JSON object with the following properties:
+
+[json]
+----
+{
+    "title": "The title of your data set",
+    "description": "A description of your data set",
+    "version": "0.1.0"
+}
+----

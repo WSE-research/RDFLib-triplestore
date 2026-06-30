@@ -9,9 +9,9 @@ from decouple import config
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
-from rdflib import ConjunctiveGraph, Graph
+from rdflib import Graph
 from rdflib_endpoint import SparqlRouter
-from SPARQLWrapper import SPARQLWrapper, POST, DIGEST, JSON
+from SPARQLWrapper import SPARQLWrapper, JSON
 import starlette.status as status
 import uvicorn
 

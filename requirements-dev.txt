@@ -1,5 +1,5 @@
 # Tooling for local development and CI (kept separate from the app runtime deps).
 pytest==9.1.1
 pytest-cov==7.1.0
-ruff==0.15.20
+ruff==0.15.21
 httpx==0.28.1

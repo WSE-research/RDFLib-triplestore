@@ -1,5 +1,5 @@
 chardet==7.4.3
-fastapi==0.139.0
+fastapi==0.139.2
 python-decouple==3.8
 rdflib==7.6.0
 rdflib_endpoint==0.6.2

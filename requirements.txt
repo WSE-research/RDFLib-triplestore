@@ -4,5 +4,5 @@ python-decouple==3.8
 rdflib==7.6.0
 rdflib_endpoint==0.6.3
 SPARQLWrapper==2.0.0
-starlette==1.6.0
-uvicorn==0.53.0
+starlette==1.7.0
+uvicorn==0.54.0

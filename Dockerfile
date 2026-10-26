@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.10
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11
 
 # parameters that might be provided at runtime by using the --env option
 
